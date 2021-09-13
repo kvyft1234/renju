@@ -83,6 +83,6 @@ var timerCount;
 function execute(func,time,interval){
 timerCount = setInterval(func,interval);
 setTimeout(function(){clearInterval(timerCount)},time);
-return timerCount;
+return function(){clearInterval(timerCount)};
 }
 
